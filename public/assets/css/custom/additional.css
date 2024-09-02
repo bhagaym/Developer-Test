@@ -1,0 +1,41 @@
+[data-bs-theme=light] {
+    --bs-primary: #f84e00;
+    --bs-primary-active: #d64102;
+    --bs-primary-rgb: 248, 78, 0;
+    --bs-primary-rgb-active: 214, 65, 2;
+    --bs-text-primary: var(--bs-primary);
+    --bs-component-active-bg: var(--bs-primary);
+    --bs-component-hover-color: var(--bs-primary);
+    --bs-component-checked-bg:  var(--bs-primary);
+    --bs-menu-link-color-hover:  var(--bs-primary);
+    --bs-menu-link-color-show:  var(--bs-primary);
+    --bs-menu-link-color-here:  var(--bs-primary);
+    --bs-menu-link-color-active:  var(--bs-primary);
+    --bs-ribbon-label-bg:  var(--bs-primary);
+    --bs-ribbon-label-border-color:  var(--bs-primary-active);
+    --bs-link-color:  var(--bs-primary);
+    --bs-link-hover-color:  var(--bs-primary-active);
+    --bs-link-color-rgb: var(--bs-primary-rgb);
+
+    --bs-extra: #22331D;
+    --bs-extra-active: #304829;
+    
+    --bs-info:  #1B84FF;
+    --bs-info-active: #056EE9;
+    --bs-text-info: var(--bs-info);
+}
+[data-kt-app-layout=dark-sidebar] .app-sidebar{
+    background-color: #22331D;
+}
+[data-kt-app-layout=dark-sidebar] .app-sidebar .menu .menu-item .menu-link.active{
+    background-color: #304829;
+}
+
+.link-primary:hover, .link-primary:focus {
+    color: RGBA(var(--bs-primary-rgb-active), var(--bs-link-opacity, 1)) !important;
+    text-decoration-color: RGBA(var(--bs-primary-rgb-active), var(--bs-link-underline-opacity, 1)) !important;
+}
+.form-check-input:checked {
+    background-color: var(--bs-primary);
+    border: 1px solid var(--bs-primary-active);
+}
