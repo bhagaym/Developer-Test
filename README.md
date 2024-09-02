@@ -9,13 +9,13 @@
 
 # Install Laravel!
 
-1.  Composer is an application-level package manager for the PHP programming language that provides a standard format for managing dependencies of PHP software and required libraries. To install Composer globally, download the installer from [https://getcomposer.org/download/](https://getcomposer.org/download/) Verify that Composer in successfully installed, and version of installed Composer will appear:
+1.  Use Git to clone this repository.
 
-    `composer --version`
+    `git clone https://github.com/bhagaym/Developer-Test.git`
 
-2.  Navigate your prompt to `starterkit` folder.
+2.  Navigate your prompt to `Developer-Test` folder.
 
-    `cd starterkit`
+    `cd Developer-Test`
 
 3.  Install composer dependencies.
 
@@ -44,12 +44,24 @@
 
 ## Run Laravel
 
-To run Laravel application navigate your prompt to `starterkit` folder and run the following command. This command will listen for changes and hot reload them.
+To run Laravel application navigate your prompt to `Developer-Test` folder and run the following command.
 
-1.  Navigate your prompt to `starterkit` folder.
+1.  Navigate your prompt to `Developer-Test` folder.
 
-    `cd starterkit`
+    `cd Developer-Test`
 
 2.  `php artisan serve`
 
     Keep yout prompt running by default application is served http://127.0.0.1:8000
+
+## Testing Laravel
+
+To run Laravel testing navigate your prompt to `Developer-Test` folder and run the following command.
+
+1.  Navigate your prompt to `Developer-Test` folder.
+
+    `cd Developer-Test`
+
+2.  Run this command to test image fiture.
+
+    `php artisan test --filter=ImageTest`
