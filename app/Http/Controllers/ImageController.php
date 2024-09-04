@@ -9,8 +9,8 @@ use App\DataTables\ImagesDataTable;
 
 class ImageController extends Controller
 {
-    public function index(ImagesDataTable $dataTable)
+    public function index()
     {
-        return $dataTable->render('pages/images.list');
+        return view('pages/images.list');
     }
 }

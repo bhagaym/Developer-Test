@@ -18,10 +18,15 @@ class AddImageModal extends Component
 
     public $edit_mode = false;
 
-    protected $rules = [
-        'name' => 'required|string|max:255',
-        'file_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ];
+    protected function rules()
+    {
+        return [
+            'name' => 'required|string|max:255',
+            'file_path' => $this->edit_mode
+                ? 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+                : 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ];
+    }
 
     protected $listeners = [
         'delete_image' => 'deleteImage',
@@ -32,7 +37,7 @@ class AddImageModal extends Component
 
     public function resetFormImage()
     {
-        $this->reset(['name', 'file_path', 'saved_file_path']);
+        $this->reset(['id', 'name', 'file_path', 'saved_file_path']);
     }
 
     public function render()
@@ -53,13 +58,16 @@ class AddImageModal extends Component
 
             if ($this->file_path) {
                 $data['file_path'] = $this->file_path->store('images', 'public');
-            } else {
-                $data['file_path'] = null;
             }
 
             $image = Image::find($this->id);
 
             if ($image) {
+                $this->edit_mode = true;
+                if (!$this->file_path) {
+                    unset($data['file_path']);
+                }
+
                 $image->update($data);
                 $this->dispatch('success', __('Image updated successfully'));
             } else {
@@ -69,6 +77,7 @@ class AddImageModal extends Component
         });
 
         $this->resetFormImage();
+        $this->dispatch('refreshTable');
     }
 
     public function deleteImage($id)
@@ -78,6 +87,7 @@ class AddImageModal extends Component
 
         // Emit a success event with a message
         $this->dispatch('success', 'Image successfully deleted');
+        $this->dispatch('refreshTable');
     }
 
     public function updateImage($id)
