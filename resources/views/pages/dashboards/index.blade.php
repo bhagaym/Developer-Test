@@ -11,7 +11,7 @@
     <!--begin::Row-->
     <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
         <!--begin::Col-->
-        <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-3 mb-md-5 mb-xl-10">
+        <div class="col-md-12 col-lg-12 col-xl-12 mb-md-5 mb-xl-10">
             <div class="card card-flush h-md-100">
                 <!--begin::Body-->
                 <div class="card-body d-flex flex-column justify-content-between mt-9 bgi-no-repeat bgi-size-cover bgi-position-x-center pb-0" style="background-position: 100% 50%; background-image:url('assets/media/stock/900x600/42.png')">

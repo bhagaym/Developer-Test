@@ -11,7 +11,10 @@ class ImageTable extends Component
     use WithPagination;
     public $search = '';
 
-    protected $listeners = ['searchImage' => 'searchImage'];
+    protected $listeners = [
+        'searchImage' => 'searchImage',
+        'refreshTable' => 'render',
+    ];
 
     public function searchImage($searchValue)
     {
